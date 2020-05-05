@@ -1,30 +1,18 @@
-#include <heading.h>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 int main()
 {
-    char ch, sl[200];
-    FILE *input, *output;
-    input = fopen("words.txt", "w");
-if((input=fopen("words.txt","w")==NULL){
-        printf("Cannot open file.\n");
-        exit(1);
-}
-scanf("%s",sl);
-fputs(sl,input);
-fclose(input);
-input = fopen("words.txt", "r");
-output = fopen("output.txt", "w");
-if((output=fopen("output.txt","w")==NULL){
-        printf("Cannot open file.\n");
-        exit(1);
-}
-while((ch=getc(input))!=EOF)
-{
-        if (ch != ' ') {
-            putc(ch, output);
-        } else
-            putc('\n', output);
-}
-fclose(input);
-fclose(output);
+    FILE* in = fopen("words.txt", "r");
+    char* str = (char*)malloc(200 * sizeof(char));
+    while (!feof(in)) {
+        fgets(str, 200, in);
+    }
+    fclose(in);
+    printf("%c \n", str[3]);
+    free(str);
     return 0;
 }
+
