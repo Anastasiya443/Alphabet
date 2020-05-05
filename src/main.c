@@ -1,7 +1,4 @@
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <heading.h>
 
 int main()
 {
@@ -11,7 +8,8 @@ int main()
         fgets(str, 200, in);
     }
     fclose(in);
-    printf("%c \n", str[3]);
+    for (int i = 0; i < 10; i++)
+        printf("%c \n", str[i]);
     free(str);
     return 0;
 }
