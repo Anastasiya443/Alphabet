@@ -12,6 +12,22 @@ int char_lenght()
     return numb;
 }
 
+int wordsfind(char* str, int* words, int number)
+{
+    int flag, i;
+    for (number = 0, flag = 1, i = 0; str[i]; i++) {
+        if (str[i] == ' ') { // Все пробелы заменяем на символ конца строки //
+            str[i] = 0;
+            flag = 1;
+        } else if (flag) { // Позиции первых после пробелов символов записываем
+                           // в массив //
+            words[number++] = i;
+            flag = 0;
+        }
+    }
+    return number;
+}
+
 int main()
 {
     int n = char_lenght();
