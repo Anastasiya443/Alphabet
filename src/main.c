@@ -41,16 +41,34 @@ int sort(int number, char* str, int* words)
     return number;
 }
 
+void output(int number, char* str, int* words)
+{
+    int i;
+    FILE* out = fopen("out.txt", "w");
+    for (i = 0; i < number; i++) { // Вывод результата //
+        if (i == number - 1) {
+            fputs(&str[words[i]], out);
+        } else {
+            fputs(&str[words[i]], out);
+            fputs(" ", out);
+        }
+    }
+    fclose(out);
+}
+
 int main()
 {
     int n = char_lenght();
-    int i, number = 0;
+    int number = 0;
     int* words = (int*)malloc(n * sizeof(int));
     FILE* in = fopen("words.txt", "r");
     char* str = (char*)malloc(n * sizeof(char));
     while (!feof(in)) {
         fgets(str, n + 1, in);
     }
+    number = wordsfind(str, words, number);
+    number = sort(number, str, words);
+    output(number, str, words);
     fclose(in);
     free(words);
     free(str);
