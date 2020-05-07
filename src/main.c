@@ -28,6 +28,19 @@ int wordsfind(char* str, int* words, int number)
     return number;
 }
 
+int sort(int number, char* str, int* words)
+{
+    int j, i, temp;
+    for (j = number - 1; j > 0; j--) // Сортировка //
+        for (i = 0; i < j; i++)
+            if (strcmp(&str[words[i]], &str[words[i + 1]]) > 0) {
+                temp = words[i];
+                words[i] = words[i + 1];
+                words[i + 1] = temp;
+            }
+    return number;
+}
+
 int main()
 {
     int n = char_lenght();
