@@ -1,5 +1,17 @@
 #include <heading.h>
 
+int char_lenght()
+{
+    int numb;
+    FILE* numbers = fopen("words.txt", "r");
+    char* check = (char*)malloc(500 * sizeof(char));
+    fgets(check, 500, numbers);
+    numb = strlen(check);
+    free(check);
+    fclose(numbers);
+    return numb;
+}
+
 int main()
 {
     int n = char_lenght();
@@ -11,5 +23,7 @@ int main()
         fgets(str, n + 1, in);
     }
     fclose(in);
+    free(words);
+    free(str);
     return 0;
 }
