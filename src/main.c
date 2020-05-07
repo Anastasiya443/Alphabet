@@ -2,15 +2,14 @@
 
 int main()
 {
+    int n = char_lenght();
+    int i, number = 0;
+    int* words = (int*)malloc(n * sizeof(int));
     FILE* in = fopen("words.txt", "r");
-    char* str = (char*)malloc(200 * sizeof(char));
+    char* str = (char*)malloc(n * sizeof(char));
     while (!feof(in)) {
-        fgets(str, 200, in);
+        fgets(str, n + 1, in);
     }
     fclose(in);
-    for (int i = 0; i < 10; i++)
-        printf("%c \n", str[i]);
-    free(str);
     return 0;
 }
-
