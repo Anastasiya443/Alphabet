@@ -1,5 +1,7 @@
-#include <heading.h>
-int sort(int number, char* str, int* words)
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void sort(int number, char* str, int* words)
 {
     int j, i, temp;
     for (j = number - 1; j > 0; j--) // Сортировка //
@@ -9,7 +11,6 @@ int sort(int number, char* str, int* words)
                 words[i] = words[i + 1];
                 words[i + 1] = temp;
             }
-    return number;
 }
 
 void output(int number, char* str, int* words)
@@ -26,3 +27,14 @@ void output(int number, char* str, int* words)
     }
     fclose(out);
 }
+
+int spacescheck(char* str, int n)
+{
+    int check = 1, i;
+    for (i = 0; i < n; i++) {
+        if (str[i] == ' ')
+            check++;
+    }
+    return check;
+}
+
