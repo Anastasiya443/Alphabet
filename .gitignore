@@ -31,3 +31,4 @@
 *.out
 *.app
 program
+bin/program_test
