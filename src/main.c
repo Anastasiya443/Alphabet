@@ -25,6 +25,7 @@ int main()
     fgets(str, n, in);
     if (Error(str, n) == -1)
         return -1;
+    lower(str);
 
     k = spacescheck(str, n);
     int* words = (int*)malloc(k * sizeof(int));
