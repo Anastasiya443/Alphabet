@@ -11,22 +11,24 @@ int main()
                "there.");
         return -1;
     }
-    int k;
-    int n = char_lenght();
-    char* str = (char*)malloc(n * sizeof(char));
-    k = spacescheck(str, n);
-    int* words = (int*)malloc(k * sizeof(int));
-    while (!feof(in)) {
-        fgets(str, n + 1, in);
-    }
-
-    int pos = ftell(in);
-    if (pos <= 0) {
+    fseek(in, 0, SEEK_END);
+    long size_file = ftell(in);
+    printf("Size of file words.txt: %ld\n", size_file);
+    if (size_file == 0) {
         printf("File words.txt is empty\n");
         return -1;
     }
+    fseek(in, 0, SEEK_SET);
+    int k;
+    int n = char_lenght();
+    char* str = (char*)malloc(n * sizeof(char));
+    fgets(str, n, in);
     if (Error(str, n) == -1)
         return -1;
+
+    k = spacescheck(str, n);
+    int* words = (int*)malloc(k * sizeof(int));
+
     wordsfind(str, words);
     sort(k, str, words);
     output(k, str, words);

@@ -31,32 +31,20 @@ int char_lenght()
 
 int Error(char* str, int n)
 {
-    int i, f = 0;
-    for (i = 0; i < n; i++) {
-        if (((str[i] >= 'A') && (str[i] <= 'Z'))
-            || ((str[i] >= 'a') && (str[i] <= 'z'))) {
-            f = 1;
-            break;
-        }
-    }
-    if (f == 0) {
-        printf("No latin characters in file\n");
-        return -1;
-    }
-
-    for (i = 0; i < n - 1; i++) {
-        if (((str[i] >= 'A') && (str[i] <= 'Z'))
-            || ((str[i] >= 'a') && (str[i] <= 'z'))) {
-            continue;
+    int i;
+    while (*str != '\0') {
+        if (((*str >= 'A') && (*str <= 'Z'))
+            || ((*str >= 'a') && (*str <= 'z'))) {
         } else {
-            if (str[i] != ' ') {
+            if (*str != ' ') {
                 printf("Not only Latin letters entered\n");
                 return -1;
             }
         }
+        str++;
     }
 
-    for (i = 0; i < n; i++) {
+    for (i = 0; i < n - 1; i++) {
         if (str[i] == ' ' && str[i + 1] == ' ') {
             printf("The entered text contains 2 (or more) spaces in a row\n");
             return -1;
