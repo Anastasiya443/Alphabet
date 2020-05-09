@@ -1,9 +1,9 @@
 language: c
 
 script:
-- make && make run && make run_test
-- git ls-files src/ | xargs clang-format -i && git diff —exit-code
-- git ls-files test/ | xargs clang-format -i && git diff —exit-code
+  - make && make run && make run_test
+  - git ls-files src/ | xargs clang-format -i && git diff --exit-code
+  - git ls-files test/ | xargs clang-format -i && git diff --exit-code
 
 compiler: gcc
 

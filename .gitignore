@@ -30,5 +30,6 @@
 *.exe
 *.out
 *.app
-program
+bin/program
 bin/program_test
+*.txt
