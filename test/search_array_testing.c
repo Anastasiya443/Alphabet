@@ -1,6 +1,5 @@
 #include <ctest.h>
 #include <search_array.h>
-
 CTEST(working_with_array, Error)
 {
     // Given

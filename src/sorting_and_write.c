@@ -37,4 +37,3 @@ int spacescheck(char* str, int n)
     }
     return check;
 }
-
