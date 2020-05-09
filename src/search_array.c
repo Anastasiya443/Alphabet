@@ -9,9 +9,7 @@ void wordsfind(char* str, int* words)
         if (str[i] == ' ') { // Все пробелы заменяем на символ конца строки //
             str[i] = 0;
             flag = 1;
-        } else if (flag) { // Позиции первых после пробелов символов записываем
-                           // в
-            // массив //
+        } else if (flag) {
             words[number++] = i;
             flag = 0;
         }
@@ -54,7 +52,6 @@ int Error(char* str, int n)
         }
         str++;
     }
-
     for (i = 0; i < n - 1; i++) {
         if (str[i] == ' ' && str[i + 1] == ' ') {
             printf("The entered text contains 2 (or more) spaces in a row\n");

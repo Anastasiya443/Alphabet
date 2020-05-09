@@ -26,14 +26,11 @@ int main()
     if (Error(str, n) == -1)
         return -1;
     lower(str);
-
     k = spacescheck(str, n);
     int* words = (int*)malloc(k * sizeof(int));
-
     wordsfind(str, words);
     sort(k, str, words);
     output(k, str, words);
-
     fclose(in);
     free(words);
     free(str);
