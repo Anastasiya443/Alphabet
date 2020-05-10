@@ -1,5 +1,5 @@
-#ifndef _SEARCH_ARRAY_H_
-#define _SEARCH_ARRAY_H_
+#ifndef SEARCH_ARRAY_H
+#define SEARCH_ARRAY_H
 void wordsfind(char* str, int* words);
 int char_lenght();
 int Error(char* str, int numb);
