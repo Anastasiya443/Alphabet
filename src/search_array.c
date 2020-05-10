@@ -1,4 +1,3 @@
-#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -26,16 +25,6 @@ int char_lenght()
     free(check);
     fclose(numbers);
     return numb;
-}
-
-void lower(char* str)
-{
-    while (*str != '\0') {
-        if ((*str >= 'A') && (*str <= 'Z')) {
-            *str = tolower(*str);
-        }
-        str++;
-    }
 }
 
 int Error(char* str, int n)
