@@ -3,14 +3,17 @@
 #include <string.h>
 void sort(int number, char* str, int* words)
 {
-    int j, i, temp;
-    for (j = number - 1; j > 0; j--) // Сортировка //
-        for (i = 0; i < j; i++)
-            if (strcmp(&str[words[i]], &str[words[i + 1]]) > 0) {
+    int j, i, temp, check;
+    for (j = number - 1; j > 0; j--) { // Сортировка //
+        for (i = 0; i < j; i++) {
+            check = strcasecmp(&str[words[i]], &str[words[i + 1]]);
+            if (check > 0) {
                 temp = words[i];
                 words[i] = words[i + 1];
                 words[i + 1] = temp;
             }
+        }
+    }
 }
 
 void output(int number, char* str, int* words)
