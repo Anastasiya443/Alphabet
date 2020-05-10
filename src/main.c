@@ -23,11 +23,11 @@ int main()
     int n = char_lenght();
     char* str = (char*)malloc(n * sizeof(char));
     fgets(str, n, in);
-    if (Error(str, n) == -1)
+    if (is_valid_string(str, n) == -1)
         return -1;
-    k = spacescheck(str, n);
+    k = count_spaces(str, n);
     int* words = (int*)malloc(k * sizeof(int));
-    wordsfind(str, words);
+    split_by_space(str, words);
     sort(k, str, words);
     output(k, str, words);
     fclose(in);

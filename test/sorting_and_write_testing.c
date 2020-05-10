@@ -1,7 +1,7 @@
 #include <ctest.h>
 #include <sorting_and_write.h>
 
-CTEST(sorting, spacescheck)
+CTEST(sorting, count_spaces)
 {
     // Given
     char* a_1 = "js*kbg skjtgb^sgtjk sjd&bggj sjdkgbg";
@@ -11,9 +11,9 @@ CTEST(sorting, spacescheck)
     char* a_3 = "Aklghjvhj sjgbt stngsthB stkhnsklThn hvshvgsfg";
     int n3 = 46;
     // When
-    char result_1 = spacescheck(a_1, n1);
-    char result_2 = spacescheck(a_2, n2);
-    char result_3 = spacescheck(a_3, n3);
+    char result_1 = count_spaces(a_1, n1);
+    char result_2 = count_spaces(a_2, n2);
+    char result_3 = count_spaces(a_3, n3);
 
     // Then
     int expected_1 = 4;

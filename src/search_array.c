@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void wordsfind(char* str, int* words)
+void split_by_space(char* str, int* words)
 {
     int flag, i, number;
     for (number = 0, flag = 1, i = 0; str[i]; i++) {
@@ -27,7 +27,7 @@ int char_lenght()
     return numb;
 }
 
-int Error(char* str, int n)
+int is_valid_string(char* str, int n)
 {
     int i;
     while (*str != '\0') {

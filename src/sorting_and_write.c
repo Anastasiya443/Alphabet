@@ -31,7 +31,7 @@ void output(int number, char* str, int* words)
     fclose(out);
 }
 
-int spacescheck(char* str, int n)
+int count_spaces(char* str, int n)
 {
     int check = 1, i;
     for (i = 0; i < n; i++) {

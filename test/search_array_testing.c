@@ -1,6 +1,6 @@
 #include <ctest.h>
 #include <search_array.h>
-CTEST(working_with_array, Error)
+CTEST(working_with_array, is_valid_string)
 {
     // Given
     char* a_1 = "vnkd knsg sknv sskvn";
@@ -10,9 +10,9 @@ CTEST(working_with_array, Error)
     char* a_3 = "@zf xfj";
     int n3 = 7;
     // When
-    int result_1 = Error(a_1, n1);
-    int result_2 = Error(a_2, n2);
-    int result_3 = Error(a_3, n3);
+    int result_1 = is_valid_string(a_1, n1);
+    int result_2 = is_valid_string(a_2, n2);
+    int result_3 = is_valid_string(a_3, n3);
 
     // Then
     int expected_1 = 0;
