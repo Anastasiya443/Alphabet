@@ -32,3 +32,5 @@
 *.app
 bin/program
 bin/program_test
+out.txt
+words.txt
