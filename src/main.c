@@ -2,9 +2,9 @@
 #include <sorting_and_write.h>
 #include <stdio.h>
 #include <stdlib.h>
-int main()
+int main(int argc, char *argv[])
 {
-    FILE* in = fopen("words.txt", "r");
+    FILE* in = fopen(argv[1], "r");
     if (in == NULL) {
         printf("Cannot open file.\nPlease create a file words.txt and write "
                "the data "

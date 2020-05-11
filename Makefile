@@ -18,7 +18,7 @@ build/test/main.o:test/main.c
 build/test/sorting_and_write.o:test/sorting_and_write_testing.c
 	gcc -I thirdparty -I src -Wall -Werror -c test/sorting_and_write_testing.c -o build/test/sorting_and_write.o
 run:
-	./bin/program
+	./bin/program words.txt
 run_test:
 	./bin/program_test
 clean:
