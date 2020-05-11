@@ -1,7 +1,8 @@
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void wordsfind(char* str, int* words)
+void split_by_space(char* str, int* words)
 {
     int flag, i, number;
     for (number = 0, flag = 1, i = 0; str[i]; i++) {
@@ -15,36 +16,27 @@ void wordsfind(char* str, int* words)
     }
 }
 
-int char_lenght()
+int char_lenght(FILE* in)
 {
-    int numb;
-    FILE* numbers = fopen("words.txt", "r");
-    char* check = (char*)malloc(500 * sizeof(char));
-    fgets(check, 500, numbers);
-    numb = strlen(check);
-    free(check);
-    fclose(numbers);
+    fseek(in, 0, SEEK_END);
+    long numb = ftell(in);
+    fseek(in, 0, SEEK_SET);
     return numb;
 }
 
-int Error(char* str, int n)
+int is_valid_string(char* str, int n)
 {
     int i;
+    if (n == 0)
+        return 3;
     while (*str != '\0') {
-        if (((*str >= 'A') && (*str <= 'Z'))
-            || ((*str >= 'a') && (*str <= 'z'))) {
-        } else {
-            if (*str != ' ') {
-                printf("Not only Latin letters entered\n");
-                return -1;
-            }
-        }
+        if (isalpha(*str) == 0 && *str != ' ')
+            return 1;
         str++;
     }
     for (i = 0; i < n - 1; i++) {
         if (str[i] == ' ' && str[i + 1] == ' ') {
-            printf("The entered text contains 2 (or more) spaces in a row\n");
-            return -1;
+            return 2;
         }
     }
     return 0;

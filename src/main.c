@@ -5,29 +5,34 @@
 int main()
 {
     FILE* in = fopen("words.txt", "r");
-    if ((in = fopen("words.txt", "r")) == NULL) {
+    if (in == NULL) {
         printf("Cannot open file.\nPlease create a file words.txt and write "
                "the data "
                "there.");
         return -1;
     }
-    fseek(in, 0, SEEK_END);
-    long size_file = ftell(in);
-    printf("Size of file words.txt: %ld\n", size_file);
-    if (size_file == 0) {
-        printf("File words.txt is empty\n");
-        return -1;
-    }
-    fseek(in, 0, SEEK_SET);
     int k;
-    int n = char_lenght();
+    int n = char_lenght(in);
     char* str = (char*)malloc(n * sizeof(char));
     fgets(str, n, in);
-    if (Error(str, n) == -1)
-        return -1;
-    k = spacescheck(str, n);
+    int err = is_valid_string(str, n);
+    switch (err) {
+    case 0:
+        printf("Correct entry made\n");
+        break;
+    case 1:
+        printf("Not only Latin letters entered\n");
+        break;
+    case 2:
+        printf("The entered text contains 2 (or more) spaces in a row\n");
+        break;
+    case 3:
+        printf("File words.txt is empty\n");
+        break;
+    }
+    k = count_spaces(str, n);
     int* words = (int*)malloc(k * sizeof(int));
-    wordsfind(str, words);
+    split_by_space(str, words);
     sort(k, str, words);
     output(k, str, words);
     fclose(in);

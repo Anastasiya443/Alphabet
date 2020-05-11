@@ -1,6 +1,6 @@
 #ifndef SEARCH_ARRAY_H
 #define SEARCH_ARRAY_H
-void wordsfind(char* str, int* words);
+void split_by_space(char* str, int* words);
 int char_lenght();
-int Error(char* str, int numb);
+int is_valid_string(char* str, int numb);
 #endif
