@@ -12,7 +12,7 @@ int main()
         return -1;
     }
     int k;
-    int n = char_lenght();
+    int n = char_lenght(in);
     char* str = (char*)malloc(n * sizeof(char));
     fgets(str, n, in);
     int err = is_valid_string(str, n);

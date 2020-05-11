@@ -16,15 +16,11 @@ void split_by_space(char* str, int* words)
     }
 }
 
-int char_lenght()
+int char_lenght(FILE* in)
 {
-    int numb;
-    FILE* numbers = fopen("words.txt", "r");
-    char* check = (char*)malloc(500 * sizeof(char));
-    fgets(check, 500, numbers);
-    numb = strlen(check);
-    free(check);
-    fclose(numbers);
+    fseek(in, 0, SEEK_END);
+    long numb = ftell(in);
+    fseek(in, 0, SEEK_SET);
     return numb;
 }
 
@@ -43,7 +39,5 @@ int is_valid_string(char* str, int n)
             return 2;
         }
     }
-
-    return 0;
     return 0;
 }
