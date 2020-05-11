@@ -29,10 +29,10 @@ int is_valid_string(char* str, int n)
     int i;
     if (n == 0)
         return 3;
-    while (*str != '\0') {
-        if (isalpha(*str) == 0 && *str != ' ')
+    while (str[i] != '\0') {
+        if (isalpha(str[i]) == 0 && str[i] != ' ')
             return 1;
-        str++;
+        i++;
     }
     for (i = 0; i < n - 1; i++) {
         if (str[i] == ' ' && str[i + 1] == ' ') {
