@@ -2,7 +2,7 @@
 #include <sorting_and_write.h>
 #include <stdio.h>
 #include <stdlib.h>
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     FILE* in = fopen(argv[1], "r");
     if (in == NULL) {
@@ -30,6 +30,8 @@ int main(int argc, char *argv[])
         printf("File words.txt is empty\n");
         break;
     }
+    if (err > 0)
+        return 0;
     k = count_spaces(str, n);
     int* words = (int*)malloc(k * sizeof(int));
     split_by_space(str, words);

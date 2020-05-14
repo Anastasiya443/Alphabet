@@ -1,15 +1,15 @@
 #include <ctest.h>
 #include <sorting_and_write.h>
-
+#include <string.h>
 CTEST(sorting, count_spaces)
 {
     // Given
     char* a_1 = "js*kbg skjtgb^sgtjk sjd&bggj sjdkgbg";
-    int n1 = 36;
+    int n1 = strlen(a_1);
     char* a_2 = "argjab ajgrbjb nb   stbn";
-    int n2 = 24;
+    int n2 = strlen(a_2);
     char* a_3 = "Aklghjvhj sjgbt stngsthB stkhnsklThn hvshvgsfg";
-    int n3 = 46;
+    int n3 = strlen(a_3);
     // When
     char result_1 = count_spaces(a_1, n1);
     char result_2 = count_spaces(a_2, n2);
