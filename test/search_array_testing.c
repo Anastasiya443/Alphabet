@@ -12,20 +12,25 @@ CTEST(working_with_array, is_valid_string)
     int n3 = strlen(a_3);
     char* a_4 = "insaduuqwjqwk";
     int n4 = strlen(a_4);
+    char* a_5 = "";
+    int n5 = strlen(a_5);
     // When
     int result_1 = is_valid_string(a_1, n1);
     int result_2 = is_valid_string(a_2, n2);
     int result_3 = is_valid_string(a_3, n3);
     int result_4 = is_valid_string(a_4, n4);
+    int result_5 = is_valid_string(a_5, n5);
 
     // Then
     int expected_1 = 0;
     int expected_2 = 1;
     int expected_3 = 2;
     int expected_4 = 0;
+    int expected_5 = 3;
 
     ASSERT_EQUAL(expected_1, result_1);
     ASSERT_EQUAL(expected_2, result_2);
     ASSERT_EQUAL(expected_3, result_3);
     ASSERT_EQUAL(expected_4, result_4);
+    ASSERT_EQUAL(expected_5, result_5);
 }

@@ -1,6 +1,5 @@
 .PHONY: clean all run run_test
 all:bin/program bin/program_test
-all:bin/program
 bin/program:build/src/main.o build/src/search_array.o build/src/sorting_and_write.o
 	gcc -Wall -Werror build/src/main.o build/src/search_array.o build/src/sorting_and_write.o -o bin/program -lm
 build/src/search_array.o:src/search_array.c
@@ -20,6 +19,6 @@ build/test/sorting_and_write.o:test/sorting_and_write_testing.c
 run:
 	./bin/program words.txt
 run_test:
-	./bin/program_test
+	./bin/program_test words.txt
 clean:
-	rm -rf build/src/*.o build/test/*.o bin/program bin/program_test
+	rm -rf build/src/*.o build/test/*.o bin/program bin/program_test out.txt
