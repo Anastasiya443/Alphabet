@@ -24,9 +24,10 @@ int char_lenght(FILE* in)
     return numb;
 }
 
-int is_valid_string(char* str, int n)
+int is_valid_string(char* str)
 {
-    int i;
+    int i = 0;
+    int n = strlen(str);
     if (n == 0)
         return 3;
     while (str[i] != '\0') {

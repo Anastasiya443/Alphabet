@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
     int n = char_lenght(in);
     char* str = (char*)malloc(n * sizeof(char));
     fgets(str, n, in);
-    int err = is_valid_string(str, n);
+    int err = is_valid_string(str);
     switch (err) {
     case 0:
         printf("Correct entry made\n");
