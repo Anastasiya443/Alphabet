@@ -86,7 +86,8 @@ CTEST(working_with_array, split_by_space)
     int expected_5[11] = {0, 4, 10, 19, 22, 24, 31, 36, 40, 46, 48};
 
     char* expected_6 = (char*)malloc(54 * sizeof(char));
-    strcpy(expected_6, "Two roads diverged in a yellow wood And sorry I could\0");
+    strcpy(expected_6,
+           "Two roads diverged in a yellow wood And sorry I could\0");
     for (i = 0; i < 54; i++) {
         if (expected_6[i] == ' ')
             expected_6[i] = 0;
