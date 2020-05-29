@@ -42,7 +42,7 @@ CTEST(sorting, sort)
     sort(8, str_1, words_1);
     // Then
     int expected_1[8] = {29, 7, 34, 13, 41, 25, 19, 0};
-
+    // Comprassion
     for (i = 0; i < 8; i++)
         ASSERT_EQUAL(expected_1[i], words_1[i]);
 
@@ -59,7 +59,7 @@ CTEST(sorting, sort)
     sort(4, str_2, words_2);
     // Then
     int expected_2[4] = {6, 14, 10, 0};
-
+    // Comprassion
     for (i = 0; i < 4; i++)
         ASSERT_EQUAL(expected_2[i], words_2[i]);
 
@@ -76,7 +76,7 @@ CTEST(sorting, sort)
     sort(11, str_3, words_3);
     // Then
     int expected_3[11] = {22, 36, 48, 10, 46, 19, 4, 40, 0, 31, 24};
-
+    // Comprassion
     for (i = 0; i < 11; i++)
         ASSERT_EQUAL(expected_3[i], words_3[i]);
 }
