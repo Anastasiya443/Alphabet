@@ -1,5 +1,6 @@
 #include <ctest.h>
 #include <search_array.h>
+#include <stdlib.h>
 #include <string.h>
 CTEST(working_with_array, is_valid_string)
 {
@@ -49,7 +50,7 @@ CTEST(working_with_array, split_by_space)
             expected_2[i] = 0;
     }
     // Comprassion
-    for(i = 0; i < 3; i++)
+    for (i = 0; i < 3; i++)
         ASSERT_EQUAL(expected_1[i], words[i]);
 
     ASSERT_STR(expected_2, str);
