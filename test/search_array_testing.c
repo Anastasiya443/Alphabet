@@ -34,11 +34,16 @@ CTEST(working_with_array, is_valid_string)
 
 CTEST(working_with_array, split_by_space)
 {
-    char* str = "vnkd knsg sknv sskvn";
-    int* words = (int*)malloc(4 * sizeof(int));
-    printf("\n%c   %d\n", str[3], words[4]);
-    int chck1[4] = {1,2,3,4};
-    int chck2[4] = {1,2,3,4};
+    //Given
+    char* str = (char*)malloc(15 * sizeof(char));
+    strcpy(str, "How this works\0");
+    int* words = (int*)malloc(3 * sizeof(int));
+    //When
+    words = split_by_space(str, words);
+    //Then
+    int expected[3] = {0,4,9};
 
-    ASSERT_EQUAL(chck1[1], chck2[1]);
+    ASSERT_EQUAL(expected[0], words[0]);
+    ASSERT_EQUAL(expected[1], words[1]);
+    ASSERT_EQUAL(expected[2], words[2]);
 }
