@@ -1,4 +1,6 @@
 #include <ctest.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include <search_array.h>
 #include <string.h>
 CTEST(working_with_array, is_valid_string)
@@ -28,4 +30,15 @@ CTEST(working_with_array, is_valid_string)
     ASSERT_EQUAL(expected_3, result_3);
     ASSERT_EQUAL(expected_4, result_4);
     ASSERT_EQUAL(expected_5, result_5);
+}
+
+CTEST(working_with_array, split_by_space)
+{
+    char* str = "vnkd knsg sknv sskvn";
+    int* words = (int*)malloc(4 * sizeof(int));
+    printf("\n%c   %d\n", str[3], words[4]);
+    int chck1[4] = {1,2,3,4};
+    int chck2[4] = {1,2,3,4};
+
+    ASSERT_EQUAL(chck1[1], chck2[1]);
 }

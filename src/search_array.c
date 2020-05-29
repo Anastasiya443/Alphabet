@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void split_by_space(char* str, int* words)
+int* split_by_space(char* str, int* words)
 {
     int flag, i, number;
     for (number = 0, flag = 1, i = 0; str[i]; i++) {
@@ -14,6 +14,7 @@ void split_by_space(char* str, int* words)
             flag = 0;
         }
     }
+    return words;
 }
 
 int char_lenght(FILE* in)

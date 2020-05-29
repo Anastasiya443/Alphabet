@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
         return 0;
     k = count_spaces(str, n);
     int* words = (int*)malloc(k * sizeof(int));
-    split_by_space(str, words);
+    words = split_by_space(str, words);
     sort(k, str, words);
     output(k, str, words);
     fclose(in);
