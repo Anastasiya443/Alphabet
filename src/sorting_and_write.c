@@ -4,7 +4,7 @@
 void sort(int number, char* str, int* words)
 {
     int j, i, temp, check;
-    for (j = number - 1; j > 0; j--) { // Сортировка //
+    for (j = number - 1; j > 0; j--) { 
         for (i = 0; i < j; i++) {
             check = strcasecmp(&str[words[i]], &str[words[i + 1]]);
             if (check > 0) {
@@ -20,7 +20,7 @@ void output(int number, char* str, int* words)
 {
     int i;
     FILE* out = fopen("out.txt", "w");
-    for (i = 0; i < number; i++) { // Вывод результата //
+    for (i = 0; i < number; i++) {
         if (i == number - 1) {
             fputs(&str[words[i]], out);
         } else {
