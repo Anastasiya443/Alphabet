@@ -35,15 +35,24 @@ CTEST(working_with_array, is_valid_string)
 CTEST(working_with_array, split_by_space)
 {
     //Given
+    int i;
     char* str = (char*)malloc(15 * sizeof(char));
     strcpy(str, "How this works\0");
     int* words = (int*)malloc(3 * sizeof(int));
     //When
-    words = split_by_space(str, words);
+    split_by_space(str, words);
     //Then
-    int expected[3] = {0,4,9};
+    int expected_1[3] = {0,4,9};
 
-    ASSERT_EQUAL(expected[0], words[0]);
-    ASSERT_EQUAL(expected[1], words[1]);
-    ASSERT_EQUAL(expected[2], words[2]);
+    char* expected_2 = (char*)malloc(15 * sizeof(char));
+    strcpy(expected_2, "How this works\0");
+    for (i = 0; i < 15; i++) {
+    if (expected_2[i] == ' ')
+    expected_2[i] = 0;
+    }
+    //Comprassion
+    for(i = 0; i < 3; i++)
+    ASSERT_EQUAL(expected_1[i], words[i]);
+
+    ASSERT_STR(expected_2, str);
 }
